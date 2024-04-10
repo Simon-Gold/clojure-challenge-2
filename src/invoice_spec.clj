@@ -1,6 +1,6 @@
 (ns invoice-spec
   (:require
-    [clojure.spec.alpha :as s]))
+   [clojure.spec.alpha :as s]))
 
 (defn not-blank? [value] (-> value clojure.string/blank? not))
 (defn non-empty-string? [x] (and (string? x) (not-blank? x)))

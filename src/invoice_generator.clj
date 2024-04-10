@@ -30,16 +30,15 @@
                     (assoc :invoice/issue-date issue-date)
                     (assoc  :invoice/customer customer)
                     (assoc :invoice/items (mapv  (fn [item]
-                                                     {:invoice-item/price (:price item)
-                                                      :invoice-item/quantity (:quantity item)
-                                                      :invoice-item/sku (:sku item)
-                                                      :invoice-item/taxes (format-taxes item)})
+                                                   {:invoice-item/price (:price item)
+                                                    :invoice-item/quantity (:quantity item)
+                                                    :invoice-item/sku (:sku item)
+                                                    :invoice-item/taxes (format-taxes item)})
                                                  items)))]
     (if (s/valid? ::invoice-spec/invoice invoice)
       invoice
       ((pprint/pprint invoice)
        (throw (Exception. (s/explain-str ::invoice-spec/invoice invoice)))))))
 
-
 (comment
- (json-to-invoice "invoice.json"))
+  (json-to-invoice "invoice.json"))

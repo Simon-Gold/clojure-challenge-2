@@ -16,4 +16,4 @@
                    (or (and has-iva-19? (not has-ret-fuente-1?))
                        (and has-ret-fuente-1? (not has-iva-19?))))))))
 (comment
- (find-items-satisfying-conditions "invoice.edn"))
+  (find-items-satisfying-conditions "invoice.edn"))
